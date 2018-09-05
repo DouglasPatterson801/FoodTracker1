@@ -44,34 +44,34 @@ import UIKit
     //    MARK: Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
-        func ratingButtonTapped(button: UIButton) {
-            guard let index = ratingButtons.index(of: button) else {
-                fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
-            }
-            
-            // Calculate the rating of the selected button
-            let selectedRating = index + 1
-            
-            if selectedRating == rating {
-                // If the selected star represents the current rating, reset the rating to 0.
-                rating = 0
-            } else {
-                // Otherwise set the rating to the selected star
-                rating = selectedRating
-            }
+        
+        guard let index = ratingButtons.index(of: button) else {
+            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
         }
-    
         
+        // Calculate the rating of the selected button
+        let selectedRating = index + 1
         
-        
+        if selectedRating == rating {
+            // If the selected star represents the current rating, reset the rating to 0.
+            rating = 0
+        } else {
+            // Otherwise set the rating to the selected star
+            rating = selectedRating
+        }
     }
-
     
-
+    
+    
+    
+    
+    
+    
+    
     //    MARK: Private Methods
     
     private func setupButtons() {
-     
+        
         // clear any existing buttons
         for button in ratingButtons {
             removeArrangedSubview(button)
